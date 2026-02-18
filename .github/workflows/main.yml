@@ -1,0 +1,21 @@
+name: Basic Workflow
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Display files
+        run: ls -la
+
+      - name: Run a simple command
+        run: echo "Workflow is working successfully!"
